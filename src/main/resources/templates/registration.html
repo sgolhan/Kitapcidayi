@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="tr" th:xmllang="tr" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register New User</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/css/bootstrap.min.css"
+          integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link rel="stylesheet" th:href="@{/css/kitapcidayi.css}">
+</head>
+<body>
+
+<div class="header_container">
+    <header th:replace="fragments/headerfooter::common-header">Header</header>
+    <div class="hello_area form-area user_add fix">
+
+        <div th:if="${param.success}">
+            <div class="success-msg">
+                <i class="fa fa-check"></i>
+                You have successfully registered a new user.
+            </div>
+
+        </div>
+        <div class="giris_area">
+            <h2>Register New User</h2>
+            <p>You can register standart users from this section.</p>
+        </div>
+
+        <form th:action="@{/registration}" method="post" th:object="${user}">
+            <label>First Name</label>
+            <input type="text" name="firstName" th:field="*{firstName}" id="firstName" required autofocus="autofocus">
+            <p th:if="${#fields.hasErrors('firstName')}" th:errors="*{firstName}" class="alert alert-danger"></p>
+
+            <label>Last Name</label>
+            <input type="text" name="lastName" th:field="*{lastName}" id="lastName" required>
+            <p th:if="${#fields.hasErrors('lastName')}" th:errors="*{lastName}" class="alert alert-danger"></p>
+
+            <label>E-mail</label>
+            <input type="text" name="email" th:field="*{email}" id="email" required>
+            <p th:if="${#fields.hasErrors('email')}" th:errors="*{email}" class="alert alert-danger"></p>
+
+            <span class="mail-error fail"></span>
+            <label>Password</label>
+            <input type="password" name="password" th:field="*{password}" id="password" required>
+            <p th:if="${#fields.hasErrors('password')}" th:errors="*{password}" class="alert alert-danger"></p>
+
+
+            <input type="submit" value="Register">
+            <p style="font-size: 14px; text-align: center; margin: 0px">Already registered ? <a style="color: #ee443b" href="/login" th:href="@{/login}">Login here</a> </p>
+        </form>
+    </div>
+</div>
+
+<footer th:replace="fragments/headerfooter::common-footer">Footer</footer>
+
+<script type="text/javascript" th:src="@{/js/app.js}"></script>
+</body>
+</html>

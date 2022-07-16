@@ -1,0 +1,233 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;400;600;700;900&family=Italianno&display=swap');
+@import url('//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css');
+
+:root {
+    default-font-color: #000;
+    font-family: 'Inter', sans-serif;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Inter', sans-serif;
+}
+
+h2 {
+    display: block;
+    font-size: 1.5em;
+    margin-block-start: 0.83em;
+    margin-block-end: 0.83em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.success-msg {
+    margin: 10px 0;
+    padding: 10px;
+    border-radius: 3px 3px 3px 3px;
+    color: #270;
+    background-color: #DFF2BF;
+    font-size: small;
+}
+
+.error-msg {
+    margin: 10px 0;
+    padding: 10px;
+    border-radius: 3px 3px 3px 3px;
+    color: #faefef;
+    background-color: #ee0000;
+    font-size: small;
+}
+.giris_area h2 {
+    color: #e95545;
+    margin-bottom: 5px;
+}
+.giris_area p {
+    font-size: 12px;
+    margin: 0;
+}
+.giris_area span {
+    color: #e95545;
+}
+
+.form-area form {
+    display: flex;
+    flex-direction: column;
+    margin-top: 25px;
+}
+.form-area label {
+    margin-top: 15px;
+    margin-bottom: 5px;
+    text-align: left;
+}
+.form-area input {
+    padding: 15px;
+    border-radius: 10px;
+    border: 1px solid #ccc;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.form-area input[type="submit"] {
+    margin-top: 20px;
+    background: #e95545;
+    color: #fff;
+    font-weight: bold;
+}
+.form-area span {
+    position: relative;
+}
+.fail {
+    margin-top: 5px;
+    font-size: 12px;
+    color: red;
+}
+.form-details {
+    display: flex;
+    margin-top: 15px;
+    margin-bottom: 15px;
+    justify-content: space-between;
+}
+
+.menu_area ul {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    padding-right: 20px;
+}
+.menu_area ul li {
+    padding-left: 15px;
+}
+.menu_area {
+    display: flex;
+    align-items: center;
+}
+.menu_area li a {
+    font-size: 14px;
+    font-weight: bold;
+    color: #545a6d;
+}
+.menu_area li::after {
+    content: "|";
+    float: right;
+    color: #545a6d;
+    padding-left: 15px;
+}
+.menu_area li:last-child::after {
+    display: none;
+}
+.login_top a {
+    background: #e95545;
+    padding: 8px;
+    margin-left: 5px;
+    color: #fff;
+    width: 75px;
+    display: block;
+    text-align: center;
+}
+.login_top a:hover {
+    background: #fac03a;
+    transition: 0.3s;
+}
+.user_top a {
+    margin-left: 25px;
+    color: #545a6d;
+    text-align: right;
+    font-size: small;
+}
+.table {
+    margin: auto;
+    max-width: 1200px;
+}
+body > div > div:nth-child(3) > a {
+    background: #e95545;
+    padding: 8px;
+    color: #fff;
+    width: 100px;
+    display: block;
+    text-align: center;
+}
+body > div > div:nth-child(3) > a:hover {
+    background: #fac03a !important;
+    transition: 0.3s !important;
+    color: white !important;
+    text-decoration: none !important;
+}
+.fix {
+    width: 100%;
+    max-width: 1200px;
+    margin: 10px auto;
+}
+dl, ol, ul {
+    margin-top: revert;
+}
+
+.section {
+    overflow: scroll;
+}
+h1,h2,h3,h4,h5,h6,input {
+}
+p,span,a,label {
+}
+a {
+    text-decoration: none;
+}
+.header_inner {
+    display: flex;
+    justify-content: space-between;
+}
+.user_add select {
+    padding: 15px;
+    border-radius: 10px;
+    border: 1px solid #ccc;
+    width: 100%;
+    box-sizing: border-box;
+}
+.user_add .giris_area {
+    text-align: center;
+}
+.user_add {
+    width: 350px;
+}
+
+.user_add input[type="submit"] {
+    background: #e95545;
+    color: #fff;
+    font-weight: bold;
+    width: 150px;
+    margin: 20px auto;
+}
+.main_banner_area span {
+    color: #fff;
+    display: block;
+    font-weight: 900;
+}
+.main_banner_area h2 {
+    color: #fff;
+    padding: 40px;
+    text-align: center;
+    width: 50%;
+    font-weight: 500;
+    font-size: 35px;
+}
+
+.powered_text {
+    box-shadow: 0 0 5px #ccc;
+    padding: 20px;
+}
+.powered_text p {
+    text-align: center;
+    margin: 0;
+    font-size: 13px;
+}
+.powered_text span {
+    font-weight: bold;
+}
+
+.powered_login_page {
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+}

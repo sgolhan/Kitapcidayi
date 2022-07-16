@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="tr" th:xmllang="tr" xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register New User</title>
+    <link rel="stylesheet" th:href="@{/css/kitapcidayi.css}">
+</head>
+<body>
+<th:block th:fragment="common-header">
+    <header>
+        <div class="header_inner fix">
+            <div class="logo_area">
+                <a href="/" th:href="@{/}">
+                <img src="/images/logo.png" width="85px"
+                     th:src="@{/images/logo.png}"/></a>
+            </div>
+            <div class="menu_area">
+                <ul>
+                    <li><a href="/" th:src="@{/}">HOMEPAGE</a></li>
+                    <li><a href="/books" th:src="@{/books}">BOOK MANAGEMENT</a></li>
+                    <li><a href="/users" th:src="@{/users}">USER MANAGEMENT</a></li>
+                    <li><a href="/issues" th:src="@{/issues}">ISSUES</a></li>
+                </ul>
+                <div class="user_top">
+                    <div th:switch="${#authentication}? ${#authorization.expression('isAuthenticated()')} : ${false}">
+                        <div th:case="${false}"><a href="#">Anonymous User</a></div>
+                        <div th:case="${true}"><a href="/user_details" sec:authentication="principal.username">User</a></div>
+                    </div>
+                </div>
+                <div class="login_top">
+                    <div th:switch="${#authentication}? ${#authorization.expression('isAuthenticated()')} : ${false}">
+                        <div th:case="${false}"><a href="/login" th:href="@{/login}">LOGIN</a></div>
+                        <div th:case="${true}"><a href="/logout" th:href="@{/logout}">Logout</a></div>
+                    </div>
+                </div>
+
+
+            </div>
+        </div>
+    </header>
+</th:block>
+
+<th:block th:fragment="common-footer">
+    <br>
+    <br>
+    <footer style="position: static;margin-top: 30px;width: 100%;">
+        <div class="powered_text">
+            <p>Powered By <span>Serkan GÖLHAN</span></p>
+        </div>
+    </footer>
+</th:block>
+</body>
+</html>
