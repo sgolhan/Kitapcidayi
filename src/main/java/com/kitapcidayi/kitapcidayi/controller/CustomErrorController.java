@@ -1,18 +1,13 @@
 package com.kitapcidayi.kitapcidayi.controller;
 
-import org.hibernate.exception.ConstraintViolationException;
 import org.springframework.boot.web.servlet.error.ErrorController;
-import org.springframework.dao.DataIntegrityViolationException;
 import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.util.NestedServletException;
-import org.thymeleaf.spring5.util.DetailedError;
+
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.http.HttpServletRequest;
-import java.sql.SQLException;
-import java.sql.SQLIntegrityConstraintViolationException;
 
 @Controller
 public class CustomErrorController implements ErrorController {
@@ -37,11 +32,5 @@ public class CustomErrorController implements ErrorController {
             }
         }
         return "500";
-    }
-
-    public String handleSQLError(SQLIntegrityConstraintViolationException request) {
-        Object status = request.getMessage();
-        return "duplicate_error";
-
     }
 }
